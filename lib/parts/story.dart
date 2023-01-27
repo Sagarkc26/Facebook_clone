@@ -49,6 +49,16 @@ class StoryPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18)),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: Container(
+              height: 160,
+              width: 100,
+              decoration: BoxDecoration(
+                  color: const Color(0xff343a40),
+                  borderRadius: BorderRadius.circular(18)),
+            ),
+          ),
         ],
       ),
     );
