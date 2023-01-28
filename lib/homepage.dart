@@ -3,15 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:facebook_clone/parts/newsfeed.dart';
 import 'package:facebook_clone/parts/story.dart';
 
-class Detail {
-  final String name, address, image;
-  Detail({required this.name, required this.address, required this.image});
-}
-
-List<Detail> Details = [
-  Detail(name: "name", address: "address", image: "image"),
-];
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
