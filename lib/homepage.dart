@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: const [
           StoryPage(),
-          NewsFeed(),
+          Expanded(child: NewsFeed()),
         ],
       ),
       bottomNavigationBar: Theme(

@@ -28,23 +28,24 @@ class NewsFeed extends StatelessWidget {
               children: [
                 ListTile(
                     leading: const CircleAvatar(),
-                    title: const Text(
-                      '{details[index]["name]}',
-                      style: TextStyle(
+                    title: Text(
+                      '${details[index]["name"]}',
+                      style: const TextStyle(
                           fontSize: 18,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
                     subtitle: Row(
-                      children: const [
+                      children: [
                         Text(
-                          '{details[index]["address]}',
-                          style: TextStyle(fontSize: 14, color: Colors.white),
+                          '${details[index]["address"]}',
+                          style: const TextStyle(
+                              fontSize: 14, color: Colors.white),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text(
+                        const Text(
                           "3d ago",
                           style: TextStyle(color: Colors.white),
                         )
@@ -72,9 +73,9 @@ class NewsFeed extends StatelessWidget {
                 Container(
                   height: 310,
                   width: 400,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('{details[index]["images]}'))),
+                          image: AssetImage('${details[index]["image"]}'))),
                 ),
 
                 const ListTile(
