@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 List<Map<String, dynamic>> details = [
-  {"name": "Tiger", "address": "Address", "image": "images/tiger.jpeg"},
-  {"name": "Lion", "address": "Address", "image": "images/lion.jpg"},
-  {"name": "Tiger", "address": "Address", "image": "images/tiger2.jpeg"},
+  {"name": "Tiger", "image": "images/tiger.jpeg"},
+  {"name": "Lion", "image": "images/lion.jpg"},
+  {"name": "Tiger", "image": "images/tiger2.jpeg"},
 ];
 
 class NewsFeed extends StatelessWidget {
@@ -27,7 +27,9 @@ class NewsFeed extends StatelessWidget {
             child: Column(
               children: [
                 ListTile(
-                    leading: const CircleAvatar(),
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage('${details[index]["image"]}'),
+                    ),
                     title: Text(
                       '${details[index]["name"]}',
                       style: const TextStyle(
@@ -35,21 +37,9 @@ class NewsFeed extends StatelessWidget {
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    subtitle: Row(
-                      children: [
-                        Text(
-                          '${details[index]["address"]}',
-                          style: const TextStyle(
-                              fontSize: 14, color: Colors.white),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const Text(
-                          "3d ago",
-                          style: TextStyle(color: Colors.white),
-                        )
-                      ],
+                    subtitle: const Text(
+                      "3d ago",
+                      style: TextStyle(color: Colors.white),
                     ),
                     trailing: IconButton(
                         onPressed: () {},
@@ -75,7 +65,8 @@ class NewsFeed extends StatelessWidget {
                   width: 400,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('${details[index]["image"]}'))),
+                          image: AssetImage('${details[index]["image"]}'),
+                          fit: BoxFit.cover)),
                 ),
 
                 const ListTile(
