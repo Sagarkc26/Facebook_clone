@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Detail {
-  final String name, address, image;
-  Detail({required this.name, required this.address, required this.image});
-}
-
-List<Detail> Details = [
-  Detail(name: "name", address: "address", image: "image"),
+List<Map<String, dynamic>> details = [
+  {"name": "Tiger", "address": "Address", "image": "images/tiger.jpeg"},
+  {"name": "Lion", "address": "Address", "image": "images/lion.jpg"},
+  {"name": "Tiger", "address": "Address", "image": "images/tiger2.jpeg"},
 ];
 
 class NewsFeed extends StatelessWidget {
@@ -16,12 +13,13 @@ class NewsFeed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
+    return ListView.builder(
+      itemCount: details.length,
+      itemBuilder: (context, index) {
+        return Padding(
           padding: const EdgeInsets.only(top: 10),
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.7,
+            height: MediaQuery.of(context).size.height * 0.71,
             width: MediaQuery.of(context).size.width * 0.96,
             decoration: BoxDecoration(
                 color: const Color(0xff343a40),
@@ -31,7 +29,7 @@ class NewsFeed extends StatelessWidget {
                 ListTile(
                     leading: const CircleAvatar(),
                     title: const Text(
-                      "Name & Surname",
+                      '{details[index]["name]}',
                       style: TextStyle(
                           fontSize: 18,
                           color: Colors.white,
@@ -40,7 +38,7 @@ class NewsFeed extends StatelessWidget {
                     subtitle: Row(
                       children: const [
                         Text(
-                          "Address",
+                          '{details[index]["address]}',
                           style: TextStyle(fontSize: 14, color: Colors.white),
                         ),
                         SizedBox(
@@ -74,7 +72,9 @@ class NewsFeed extends StatelessWidget {
                 Container(
                   height: 310,
                   width: 400,
-                  decoration: const BoxDecoration(color: Colors.white),
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('{details[index]["images]}'))),
                 ),
 
                 const ListTile(
@@ -87,24 +87,27 @@ class NewsFeed extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                const Divider(
-                  color: Colors.white,
+                const Padding(
+                  padding: EdgeInsets.only(left: 15, right: 15),
+                  child: Divider(
+                    color: Colors.white,
+                  ),
+                ),
+                const ListTile(
+                  leading: Text(
+                    "❤ Likes",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  trailing: Text(
+                    "comments",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 )
               ],
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.7,
-            width: MediaQuery.of(context).size.width * 0.96,
-            decoration: BoxDecoration(
-                color: const Color(0xff343a40),
-                borderRadius: BorderRadius.circular(15)),
-          ),
-        ),
-      ],
+        );
+      },
     );
   }
 }

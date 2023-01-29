@@ -1,7 +1,7 @@
+import 'package:facebook_clone/parts/story.dart';
 import 'package:flutter/material.dart';
 
 import 'package:facebook_clone/parts/newsfeed.dart';
-import 'package:facebook_clone/parts/story.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -60,13 +60,11 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            StoryPage(),
-            NewsFeed(),
-          ],
-        ),
+      body: Column(
+        children: const [
+          StoryPage(),
+          NewsFeed(),
+        ],
       ),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
