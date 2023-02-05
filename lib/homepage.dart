@@ -66,43 +66,6 @@ class HomePage extends StatelessWidget {
           Expanded(child: NewsFeed()),
         ],
       ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-            canvasColor: Colors.black,
-            primaryColor: Colors.red,
-            textTheme: Theme.of(context)
-                .textTheme
-                .copyWith(caption: const TextStyle(color: Colors.amber))),
-        child: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-              ),
-              label: 'Business',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.video_collection_sharp,
-              ),
-              label: 'School',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.menu,
-              ),
-              label: 'School',
-            ),
-          ],
-          selectedItemColor: Colors.blue,
-        ),
-      ),
     );
   }
 }
