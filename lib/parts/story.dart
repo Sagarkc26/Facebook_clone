@@ -20,7 +20,7 @@ class StoryPage extends StatelessWidget {
         Row(
             children: List.generate(details.length, (index) {
           return Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8),
+            padding: const EdgeInsets.all(8),
             child: Container(
               height: 160,
               width: 100,

@@ -17,7 +17,7 @@ class NewsFeed extends StatelessWidget {
       itemCount: details.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.all(4),
           child: Container(
             height: MediaQuery.of(context).size.height * 0.71,
             width: MediaQuery.of(context).size.width * 0.96,
@@ -42,7 +42,12 @@ class NewsFeed extends StatelessWidget {
                       style: TextStyle(color: Colors.white),
                     ),
                     trailing: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: ((context) => Container()),
+                          );
+                        },
                         icon: const Icon(
                           Icons.more_vert,
                           color: Colors.white,
