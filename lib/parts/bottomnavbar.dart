@@ -39,7 +39,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
         body: _pages[_currentIndex]['page'],
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.black87,
+          unselectedItemColor: Colors.white,
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           currentIndex: _currentIndex,
@@ -67,7 +68,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               icon: Icon(
                 Icons.menu,
               ),
-              label: 'School',
+              label: 'Profile',
             ),
           ],
           selectedItemColor: Colors.blue,

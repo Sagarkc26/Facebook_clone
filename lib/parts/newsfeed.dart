@@ -88,6 +88,7 @@ class NewsFeed extends StatelessWidget {
                   padding: EdgeInsets.only(left: 15, right: 15),
                   child: Divider(
                     color: Colors.white,
+                    thickness: 1.2,
                   ),
                 ),
                 const ListTile(
