@@ -7,10 +7,11 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
@@ -28,8 +29,12 @@ class ProfilePage extends StatelessWidget {
                 ),
               ],
             ),
-          )
-        ]),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text("h")
+          ]),
+        ),
       ),
     );
   }
